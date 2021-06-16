@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CsvParserComponent } from './pages/csv-parser/csv-parser.component';
 
-const routes: Routes = [];
+const routes: Routes = [{ path: '', component: CsvParserComponent, pathMatch: 'full' }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
