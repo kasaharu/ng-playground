@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CsvParserRoutingModule } from './csv-parser-routing.module';
-import { CsvParserComponent } from './pages/csv-parser/csv-parser.component';
+import { CsvParserPageComponent } from './pages/csv-parser/csv-parser.component';
 
 @NgModule({
-  declarations: [CsvParserComponent],
+  declarations: [CsvParserPageComponent],
   imports: [CommonModule, CsvParserRoutingModule],
 })
 export class CsvParserModule {}

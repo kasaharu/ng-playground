@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './csv-parser.component.html',
   styleUrls: ['./csv-parser.component.scss'],
 })
-export class CsvParserComponent implements OnInit {
+export class CsvParserPageComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}

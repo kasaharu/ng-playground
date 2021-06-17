@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CsvParserComponent } from './csv-parser.component';
+import { CsvParserPageComponent } from './csv-parser.component';
 
-describe('CsvParserComponent', () => {
-  let component: CsvParserComponent;
-  let fixture: ComponentFixture<CsvParserComponent>;
+describe('CsvParserPageComponent', () => {
+  let component: CsvParserPageComponent;
+  let fixture: ComponentFixture<CsvParserPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CsvParserComponent],
+      declarations: [CsvParserPageComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CsvParserComponent);
+    fixture = TestBed.createComponent(CsvParserPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
