@@ -8,9 +8,8 @@ describe('CsvParserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CsvParserComponent ]
-    })
-    .compileComponents();
+      declarations: [CsvParserComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
