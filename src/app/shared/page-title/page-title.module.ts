@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PageTitleComponent } from './views/page-title/page-title.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    PageTitleComponent
+  ],
   imports: [
     CommonModule
   ]
