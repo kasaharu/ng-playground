@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "jest",
+    "test": "jest --coverage",
     "format": "prettier --write './**/*.{ts,html,scss}'",
     "format:check": "prettier --check './**/*.{ts,html,scss}'",
     "deploy": "ng deploy --base-href=/ng-playground/"
