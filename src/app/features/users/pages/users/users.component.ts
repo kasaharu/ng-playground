@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss'],
+  template: `<app-users></app-users>`,
 })
 export class UsersPageComponent implements OnInit {
   constructor() {}
