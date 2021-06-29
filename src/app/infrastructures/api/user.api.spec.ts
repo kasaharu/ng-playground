@@ -1,7 +1,7 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { User } from '../../domain/user';
-import { UserApi } from './user.service';
+import { UserApi } from './user.api';
 
 describe('UserApi', () => {
   let api: UserApi;
