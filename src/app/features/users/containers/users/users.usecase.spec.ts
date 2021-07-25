@@ -5,7 +5,9 @@ describe('UsersUsecase', () => {
   let usecase: UsersUsecase;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [UsersUsecase],
+    });
     usecase = TestBed.inject(UsersUsecase);
   });
 
