@@ -9,7 +9,7 @@ import { User } from '../../domain/user';
 export class UserApi {
   constructor(private readonly _http: HttpClient) {}
 
-  getUsers(): Observable<User> {
-    return this._http.get<User>('https://jsonplaceholder.typicode.com/users');
+  getUsers(): Observable<User[]> {
+    return this._http.get<User[]>('https://jsonplaceholder.typicode.com/users');
   }
 }
