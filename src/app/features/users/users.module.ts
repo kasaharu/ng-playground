@@ -6,9 +6,10 @@ import { UsersPageComponent } from './pages/users/users.component';
 import { UsersComponent } from './containers/users/users.component';
 import { UserListComponent } from './views/user-list/user-list.component';
 import { PageTitleModule } from 'src/app/shared/page-title/page-title.module';
+import { UserListEditorComponent } from './views/user-list-editor/user-list-editor.component';
 
 @NgModule({
-  declarations: [UsersPageComponent, UsersComponent, UserListComponent],
+  declarations: [UsersPageComponent, UsersComponent, UserListComponent, UserListEditorComponent],
   imports: [CommonModule, UsersRoutingModule, PageTitleModule],
 })
 export class UsersModule {}
