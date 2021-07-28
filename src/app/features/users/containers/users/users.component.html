@@ -1,38 +1,6 @@
 <app-page-title [title]="'ユーザー一覧'"></app-page-title>
 <p>ユーザーの一覧です</p>
 
-<div class="tw-shadow-md tw-my-6">
-  <table class="tw-w-full">
-    <thead>
-      <tr class="tw-bg-gray-200 tw-text-gray-600 tw-uppercase tw-text-sm tw-leading-normal">
-        <th class="tw-py-3 tw-px-6 tw-text-left">Name</th>
-        <th class="tw-py-3 tw-px-6 tw-text-center">User Name</th>
-        <th class="tw-py-3 tw-px-6 tw-text-center">Email</th>
-        <th class="tw-py-3 tw-px-6 tw-text-center">Website</th>
-      </tr>
-    </thead>
-    <ng-container *ngIf="users$ | async as users">
-      <ng-container *ngFor="let user of users">
-        <tbody class="tw-text-gray-600 tw-text-sm tw-font-light">
-          <tr class="tw-border-b tw-border-gray-200 hover:tw-bg-gray-100">
-            <td class="tw-py-3 tw-px-6 tw-text-left tw-whitespace-nowrap">
-              <div class="tw-flex tw-items-center">
-                <div class="tw-mr-2"></div>
-                <span class="tw-font-medium">{{ user.name }}</span>
-              </div>
-            </td>
-            <td class="tw-py-3 tw-px-6 tw-text-center">
-              <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">{{ user.username }}</span>
-            </td>
-            <td class="tw-py-3 tw-px-6 tw-text-center">
-              <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">{{ user.email }}</span>
-            </td>
-            <td class="tw-py-3 tw-px-6 tw-text-center">
-              <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">{{ user.website }}</span>
-            </td>
-          </tr>
-        </tbody>
-      </ng-container>
-    </ng-container>
-  </table>
-</div>
+<ng-container *ngIf="users$ | async as users">
+  <app-user-list [users]="users"></app-user-list>
+</ng-container>
