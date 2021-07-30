@@ -26,4 +26,14 @@ export class CsvParserComponent {
       console.log(csv);
     };
   }
+
+  dragOver(event: DragEvent) {
+    event.preventDefault();
+    console.log('dragOver', event);
+  }
+
+  drop(event: DragEvent) {
+    event.preventDefault();
+    console.log('drop', event);
+  }
 }
