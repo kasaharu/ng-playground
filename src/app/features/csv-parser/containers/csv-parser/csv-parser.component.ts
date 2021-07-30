@@ -36,4 +36,8 @@ export class CsvParserComponent {
     event.preventDefault();
     console.log('drop', event);
   }
+
+  dragLeave(event: DragEvent) {
+    console.log('dragLeave', event);
+  }
 }
