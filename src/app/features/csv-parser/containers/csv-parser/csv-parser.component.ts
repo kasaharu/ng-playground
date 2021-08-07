@@ -29,12 +29,16 @@ export class CsvParserComponent {
 
   dragOver(event: DragEvent) {
     event.preventDefault();
-    console.log('dragOver', event);
   }
 
   drop(event: DragEvent) {
     event.preventDefault();
-    console.log('drop', event);
+    const files: FileList | null = event.dataTransfer ? event.dataTransfer.files : null;
+
+    if (files === null || files.length === 0) {
+      return;
+    }
+    this.csvUploadElement.nativeElement.files = files;
   }
 
   dragLeave(event: DragEvent) {
