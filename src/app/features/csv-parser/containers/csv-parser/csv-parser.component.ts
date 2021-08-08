@@ -12,6 +12,7 @@ export class CsvParserComponent {
   @ViewChild('csvUpload', { static: true }) csvUploadElement!: ElementRef<HTMLInputElement>;
 
   isAttachedInvalidFile$ = new BehaviorSubject<boolean>(false);
+  isParsable = false;
 
   isAttachedCsvFile(): boolean {
     const files: FileList | null = this.csvUploadElement.nativeElement.files;
@@ -23,7 +24,8 @@ export class CsvParserComponent {
   }
 
   changeInputElement(): void {
-    this.isAttachedInvalidFile$.next(!this.isAttachedCsvFile());
+    this.isParsable = this.isAttachedCsvFile();
+    this.isAttachedInvalidFile$.next(!this.isParsable);
   }
 
   parse(): void {
@@ -57,7 +59,8 @@ export class CsvParserComponent {
       return;
     }
     this.csvUploadElement.nativeElement.files = files;
-    this.isAttachedInvalidFile$.next(!this.isAttachedCsvFile());
+    this.isParsable = this.isAttachedCsvFile();
+    this.isAttachedInvalidFile$.next(!this.isParsable);
   }
 
   dragLeave(event: DragEvent) {

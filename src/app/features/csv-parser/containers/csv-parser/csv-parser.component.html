@@ -16,11 +16,10 @@
 </div>
 
 <button
-  class="
-    tw-w-32 tw-border-2 tw-border-blue-600 tw-rounded-lg tw-px-2 tw-py-1 tw-text-blue-400 tw-cursor-pointer
-    hover:tw-bg-blue-600 hover:tw-text-blue-200
-  "
+  class="tw-bg-blue-500 hover:tw-bg-blue-700 tw-text-white tw-font-bold tw-py-2 tw-px-4 tw-rounded tw-cursor-pointer"
+  [class.tw-opacity-50]="!isParsable"
+  [class.tw-cursor-not-allowed]="!isParsable"
   (click)="parse()"
 >
-  parse
+  Parse
 </button>
