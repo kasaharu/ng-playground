@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 const CSV_MIME_TYPE = 'text/csv';
 
@@ -10,6 +11,8 @@ const CSV_MIME_TYPE = 'text/csv';
 export class CsvParserComponent {
   @ViewChild('csvUpload', { static: true }) csvUploadElement!: ElementRef<HTMLInputElement>;
 
+  isAttachedInvalidFile$ = new BehaviorSubject<boolean>(false);
+
   isAttachedCsvFile(): boolean {
     const files: FileList | null = this.csvUploadElement.nativeElement.files;
     if (files !== null && files[0].type === CSV_MIME_TYPE) {
@@ -17,6 +20,10 @@ export class CsvParserComponent {
     }
 
     return false;
+  }
+
+  changeInputElement(): void {
+    this.isAttachedInvalidFile$.next(!this.isAttachedCsvFile());
   }
 
   parse(): void {
@@ -50,6 +57,7 @@ export class CsvParserComponent {
       return;
     }
     this.csvUploadElement.nativeElement.files = files;
+    this.isAttachedInvalidFile$.next(!this.isAttachedCsvFile());
   }
 
   dragLeave(event: DragEvent) {
