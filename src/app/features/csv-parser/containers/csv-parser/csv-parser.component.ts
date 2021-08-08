@@ -1,5 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
+const CSV_MIME_TYPE = 'text/csv';
+
 @Component({
   selector: 'app-csv-parser',
   templateUrl: './csv-parser.component.html',
@@ -7,6 +9,15 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class CsvParserComponent {
   @ViewChild('csvUpload', { static: true }) csvUploadElement!: ElementRef<HTMLInputElement>;
+
+  isAttachedCsvFile(): boolean {
+    const files: FileList | null = this.csvUploadElement.nativeElement.files;
+    if (files !== null && files[0].type === CSV_MIME_TYPE) {
+      return true;
+    }
+
+    return false;
+  }
 
   parse(): void {
     const files: FileList | null = this.csvUploadElement.nativeElement.files;
