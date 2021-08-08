@@ -6,7 +6,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./csv-parser.component.scss'],
 })
 export class CsvParserComponent {
-  @ViewChild('csvUpload') csvUploadElement!: ElementRef<HTMLInputElement>;
+  @ViewChild('csvUpload', { static: true }) csvUploadElement!: ElementRef<HTMLInputElement>;
 
   parse(): void {
     const files: FileList | null = this.csvUploadElement.nativeElement.files;
