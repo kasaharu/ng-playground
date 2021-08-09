@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-file-uploader',
@@ -6,9 +6,13 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./file-uploader.component.scss'],
 })
 export class FileUploaderComponent {
+  @Output() filesAttached = new EventEmitter<FileList | null>();
   @ViewChild('csvUpload', { static: true }) csvUploadElement!: ElementRef<HTMLInputElement>;
 
-  changeInputElement(): void {}
+  changeInputElement(): void {
+    const files: FileList | null = this.csvUploadElement.nativeElement.files;
+    this.filesAttached.emit(files);
+  }
 
   dragOver(event: DragEvent) {
     event.preventDefault();
@@ -22,6 +26,8 @@ export class FileUploaderComponent {
       return;
     }
     this.csvUploadElement.nativeElement.files = files;
+
+    this.filesAttached.emit(files);
   }
 
   dragLeave(event: DragEvent) {

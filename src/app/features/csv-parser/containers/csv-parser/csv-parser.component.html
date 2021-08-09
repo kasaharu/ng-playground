@@ -1,13 +1,13 @@
 <h2 class="tw-text-2xl tw-font-bold tw-border-b-2 tw-mb-8">csv parser</h2>
 <p class="tw-mb-6">CSV ファイルを解析します</p>
 
-<ng-container *ngIf="isAttachedInvalidFile$ | async">
+<ng-container *ngIf="isAttachedInvalidFile">
   <div class="tw-flex tw-items-center tw-py-1 tw-px-2 tw-rounded-md tw-text-red-700 tw-bg-red-100 tw-border tw-border-red-300">
     <div>対応しているファイルは CSV のみです</div>
   </div>
 </ng-container>
 
-<app-file-uploader></app-file-uploader>
+<app-file-uploader (filesAttached)="updateFiles($event)"></app-file-uploader>
 
 <button
   class="tw-bg-blue-500 hover:tw-bg-blue-700 tw-text-white tw-font-bold tw-py-2 tw-px-4 tw-rounded tw-cursor-pointer"
