@@ -1,1 +1,8 @@
-<p>file-uploader works!</p>
+<div
+  class="tw-flex tw-justify-center tw-items-center tw-h-32 tw-p-2 tw-border-2 tw-border-dashed tw-rounded"
+  (dragover)="dragOver($event)"
+  (drop)="drop($event)"
+  (dragleave)="dragLeave($event)"
+>
+  <input class="tw-cursor-pointer" #csvUpload type="file" accept=".csv" (change)="changeInputElement()" />
+</div>

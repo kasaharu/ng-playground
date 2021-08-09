@@ -6,14 +6,8 @@
     <div>対応しているファイルは CSV のみです</div>
   </div>
 </ng-container>
-<div
-  class="tw-flex tw-justify-center tw-items-center tw-h-32 tw-p-2 tw-border-2 tw-border-dashed tw-rounded"
-  (dragover)="dragOver($event)"
-  (drop)="drop($event)"
-  (dragleave)="dragLeave($event)"
->
-  <input class="tw-cursor-pointer" #csvUpload type="file" accept=".csv" (change)="changeInputElement()" />
-</div>
+
+<app-file-uploader></app-file-uploader>
 
 <button
   class="tw-bg-blue-500 hover:tw-bg-blue-700 tw-text-white tw-font-bold tw-py-2 tw-px-4 tw-rounded tw-cursor-pointer"
