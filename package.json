@@ -10,7 +10,8 @@
     "format": "prettier --write './**/*.{ts,html,scss}'",
     "format:check": "prettier --check './**/*.{ts,html,scss}'",
     "deploy": "ng deploy --base-href=/ng-playground/",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
