@@ -1,3 +1,19 @@
-<ng-container *ngFor="let user of users">
-  <app-user-editor-form [user]="user"></app-user-editor-form>
+<ng-container *ngIf="users">
+  <table class="tw-my-6 tw-w-full">
+    <thead>
+      <tr class="tw-bg-gray-200 tw-text-gray-600 tw-uppercase tw-text-sm tw-leading-normal tw-flex">
+        <div class="tw-inline-block tw-flex-grow tw-py-3 tw-px-6 tw-text-left">Name</div>
+        <div class="tw-inline-block tw-flex-grow tw-py-3 tw-px-6 tw-text-center">User Name</div>
+        <div class="tw-inline-block tw-flex-grow tw-py-3 tw-px-6 tw-text-center">Email</div>
+        <div class="tw-inline-block tw-flex-grow tw-py-3 tw-px-6 tw-text-center">Website</div>
+      </tr>
+    </thead>
+    <ng-container *ngFor="let user of users">
+      <tbody class="tw-text-gray-600 tw-text-sm tw-font-light">
+        <tr class="tw-border-b tw-border-gray-200 hover:tw-bg-gray-100">
+          <app-user-editor-form [user]="user"></app-user-editor-form>
+        </tr>
+      </tbody>
+    </ng-container>
+  </table>
 </ng-container>
