@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { User } from '../../../../domain/user';
 
 @Component({
   selector: 'app-user-editor-form',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserEditorFormComponent implements OnInit {
   constructor() {}
+  @Input() user: User | null = null;
 
   ngOnInit(): void {}
 }
