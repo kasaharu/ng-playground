@@ -7,9 +7,10 @@ import { UsersComponent } from './containers/users/users.component';
 import { UserListComponent } from './views/user-list/user-list.component';
 import { PageTitleModule } from 'src/app/shared/page-title/page-title.module';
 import { UserListEditorComponent } from './views/user-list-editor/user-list-editor.component';
+import { UserEditorFormComponent } from './views/user-editor-form/user-editor-form.component';
 
 @NgModule({
-  declarations: [UsersPageComponent, UsersComponent, UserListComponent, UserListEditorComponent],
+  declarations: [UsersPageComponent, UsersComponent, UserListComponent, UserListEditorComponent, UserEditorFormComponent],
   imports: [CommonModule, UsersRoutingModule, PageTitleModule],
 })
 export class UsersModule {}
