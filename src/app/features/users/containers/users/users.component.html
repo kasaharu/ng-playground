@@ -9,5 +9,11 @@
 </button>
 
 <ng-container *ngIf="users$ | async as users">
-  <app-user-list [users]="users"></app-user-list>
+  <ng-container *ngIf="!editable; else editorBlock">
+    <app-user-list [users]="users"></app-user-list>
+  </ng-container>
+
+  <ng-template #editorBlock>
+    <app-user-list-editor> </app-user-list-editor>
+  </ng-template>
 </ng-container>
