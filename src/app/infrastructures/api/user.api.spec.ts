@@ -1,6 +1,6 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { User } from '../../domain/user';
+import { createMockUser } from '../../testing/factories';
 import { UserApi } from './user.api';
 
 describe('UserApi', () => {
@@ -24,24 +24,7 @@ describe('UserApi', () => {
   });
 
   it('getUsers()', () => {
-    const expected: User[] = [
-      {
-        id: 1,
-        name: 'test',
-        username: 'sample',
-        email: '',
-        address: {
-          street: '',
-          suite: '',
-          city: '',
-          zipcode: '',
-          geo: { lat: '', lng: '' },
-        },
-        phone: '',
-        website: '',
-        company: { name: '', catchPhrase: '', bs: '' },
-      },
-    ];
+    const expected = [createMockUser({})];
 
     api.getUsers().subscribe((resp) => {
       expect(resp).toEqual(expected);
