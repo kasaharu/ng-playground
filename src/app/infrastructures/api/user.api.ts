@@ -12,4 +12,8 @@ export class UserApi {
   getUsers(): Observable<User[]> {
     return this._http.get<User[]>('https://jsonplaceholder.typicode.com/users');
   }
+
+  patchUser(user: User): Observable<User> {
+    return this._http.patch<User>(`https://jsonplaceholder.typicode.com/users/${user.id}`, user);
+  }
 }
