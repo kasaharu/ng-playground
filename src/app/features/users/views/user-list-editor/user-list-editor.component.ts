@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { User } from '../../../../domain/user';
 
 @Component({
@@ -8,4 +8,9 @@ import { User } from '../../../../domain/user';
 })
 export class UserListEditorComponent {
   @Input() users: User[] | null = null;
+  @Output() userUpdated = new EventEmitter<User>();
+
+  submit(user: User): void {
+    this.userUpdated.emit(user);
+  }
 }

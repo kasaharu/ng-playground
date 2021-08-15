@@ -11,7 +11,7 @@
     <ng-container *ngFor="let user of users">
       <tbody class="tw-text-gray-600 tw-text-sm tw-font-light">
         <tr class="tw-border-b tw-border-gray-200 hover:tw-bg-gray-100">
-          <app-user-editor-form [user]="user"></app-user-editor-form>
+          <app-user-editor-form [user]="user" (submitted)="submit($event)"></app-user-editor-form>
         </tr>
       </tbody>
     </ng-container>

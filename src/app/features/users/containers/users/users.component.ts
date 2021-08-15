@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../../../domain/user';
 import { UsersUsecase } from './users.usecase';
 
 @Component({
@@ -20,5 +21,9 @@ export class UsersComponent implements OnInit {
   toggleMode(): void {
     this.editable = !this.editable;
     this.toggleButtonText = this.editable ? '編集モードを終了' : '編集モードへ';
+  }
+
+  updateUser(user: User): void {
+    console.log(user);
   }
 }

@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup } from '@ngneat/reactive-forms';
 import { User } from '../../../../domain/user';
-import { FormGroup, FormControl } from '@ngneat/reactive-forms';
 
 @Component({
   selector: 'app-user-editor-form',
@@ -10,6 +10,7 @@ import { FormGroup, FormControl } from '@ngneat/reactive-forms';
 export class UserEditorFormComponent implements OnInit {
   constructor() {}
   @Input() user!: User;
+  @Output() submitted = new EventEmitter<User>();
 
   form = new FormGroup<User>({
     id: new FormControl(),
@@ -44,5 +45,7 @@ export class UserEditorFormComponent implements OnInit {
       phone: this.user.phone,
       website: this.user.website,
     });
+
+    this.form.valueChanges.subscribe((val) => this.submitted.emit(val));
   }
 }
