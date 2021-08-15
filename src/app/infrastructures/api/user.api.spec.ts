@@ -34,4 +34,17 @@ describe('UserApi', () => {
     expect(req.request.method).toEqual('GET');
     req.flush(expected);
   });
+
+  it('patchUser()', () => {
+    const user = createMockUser({});
+    const expected = user;
+
+    api.patchUser(user).subscribe((resp) => {
+      expect(resp).toEqual(expected);
+    });
+
+    const req = httpTestingController.expectOne(`https://jsonplaceholder.typicode.com/users/${user.id}`);
+    expect(req.request.method).toEqual('PATCH');
+    req.flush(expected);
+  });
 });
