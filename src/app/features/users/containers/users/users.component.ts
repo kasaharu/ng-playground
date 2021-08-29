@@ -24,6 +24,6 @@ export class UsersComponent implements OnInit {
   }
 
   updateUser(user: User): void {
-    console.log(user);
+    this._usecase.updateUser(user);
   }
 }

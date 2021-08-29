@@ -16,9 +16,21 @@ export class UsersUsecase extends ComponentStore<UserStore> {
 
   readonly users$: Observable<User[] | null> = this.select((state) => state.users);
   readonly saveUsers = this.updater((_, users: User[]) => ({ users }));
+  readonly saveUser = this.updater((state, user: User) => {
+    if (state.users === null) {
+      return { users: [user] };
+    }
+    const users = state.users.map((u) => (u.id === user.id ? user : u));
+    return { users };
+  });
 
   async fetchUsers(): Promise<void> {
     const users = await this._userApi.getUsers().toPromise();
     this.saveUsers(users);
+  }
+
+  async updateUser(user: User): Promise<void> {
+    const result = await this._userApi.patchUser(user).toPromise();
+    this.saveUser(result);
   }
 }
