@@ -6224,7 +6224,7 @@ jest-worker@^27.0.2:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-jest@^27.0.5:
+jest@27.0.5:
   version "27.0.5"
   resolved "https://registry.yarnpkg.com/jest/-/jest-27.0.5.tgz#141825e105514a834cc8d6e44670509e8d74c5f2"
   integrity sha512-4NlVMS29gE+JOZvgmSAsz3eOjkSsHqjTajlIsah/4MVSmKvf3zFP/TvgcLoWe2UVHiE9KF741sReqhF0p4mqbQ==
