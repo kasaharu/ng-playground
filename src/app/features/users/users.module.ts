@@ -11,7 +11,14 @@ import { UserListComponent } from './views/user-list/user-list.component';
 import { UserEditComponent } from './pages/user-edit/user-edit.component';
 
 @NgModule({
-  declarations: [UsersPageComponent, UsersComponent, UserListComponent, UserListEditorComponent, UserEditorFormComponent, UserEditComponent],
+  declarations: [
+    UsersPageComponent,
+    UsersComponent,
+    UserListComponent,
+    UserListEditorComponent,
+    UserEditorFormComponent,
+    UserEditComponent,
+  ],
   imports: [CommonModule, ReactiveFormsModule, UsersRoutingModule, PageTitleModule],
 })
 export class UsersModule {}
