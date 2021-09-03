@@ -8,7 +8,7 @@ import { UsersRoutingModule } from './users-routing.module';
 import { UserEditorFormComponent } from './views/user-editor-form/user-editor-form.component';
 import { UserListEditorComponent } from './views/user-list-editor/user-list-editor.component';
 import { UserListComponent } from './views/user-list/user-list.component';
-import { UserEditComponent } from './pages/user-edit/user-edit.component';
+import { UserEditPageComponent } from './pages/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { UserEditComponent } from './pages/user-edit/user-edit.component';
     UserListComponent,
     UserListEditorComponent,
     UserEditorFormComponent,
-    UserEditComponent,
+    UserEditPageComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, UsersRoutingModule, PageTitleModule],
 })
