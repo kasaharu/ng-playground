@@ -9,6 +9,7 @@ import { UserEditorFormComponent } from './views/user-editor-form/user-editor-fo
 import { UserListEditorComponent } from './views/user-list-editor/user-list-editor.component';
 import { UserListComponent } from './views/user-list/user-list.component';
 import { UserEditPageComponent } from './pages/user-edit/user-edit.component';
+import { UserEditComponent } from './containers/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { UserEditPageComponent } from './pages/user-edit/user-edit.component';
     UserListEditorComponent,
     UserEditorFormComponent,
     UserEditPageComponent,
+    UserEditComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, UsersRoutingModule, PageTitleModule],
 })
