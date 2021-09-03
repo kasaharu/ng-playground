@@ -6,6 +6,7 @@
         <th class="tw-py-3 tw-px-6 tw-text-left">User Name</th>
         <th class="tw-py-3 tw-px-6 tw-text-left">Email</th>
         <th class="tw-py-3 tw-px-6 tw-text-left">Website</th>
+        <th class="tw-py-3 tw-px-6 tw-text-left"></th>
       </tr>
     </thead>
     <ng-container *ngFor="let user of users">
@@ -22,6 +23,9 @@
           </td>
           <td class="tw-py-3 tw-px-6 tw-text-left">
             <span class="bg-purple-200 text-purple-600 py-1 px-3 rounded-full text-xs">{{ user.website }}</span>
+          </td>
+          <td class="tw-py-3 tw-px-6 tw-text-left">
+            <a href="" class="tw-text-blue-500 hover:tw-underline hover:tw-text-blue-300">編集</a>
           </td>
         </tr>
       </tbody>
