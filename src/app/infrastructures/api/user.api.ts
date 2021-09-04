@@ -13,6 +13,10 @@ export class UserApi {
     return this._http.get<User[]>('https://jsonplaceholder.typicode.com/users');
   }
 
+  getUser(userId: number): Observable<User> {
+    return this._http.get<User>(`https://jsonplaceholder.typicode.com/users/${userId}`);
+  }
+
   patchUser(user: User): Observable<User> {
     return this._http.patch<User>(`https://jsonplaceholder.typicode.com/users/${user.id}`, user);
   }
