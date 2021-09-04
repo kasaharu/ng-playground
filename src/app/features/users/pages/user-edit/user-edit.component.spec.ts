@@ -1,5 +1,5 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { UserEditPageComponent } from './user-edit.component';
 
 describe('UserEditPageComponent', () => {
@@ -9,6 +9,7 @@ describe('UserEditPageComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [UserEditPageComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
     }).compileComponents();
   });
 
