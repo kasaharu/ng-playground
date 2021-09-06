@@ -9,6 +9,7 @@ import { UserEditUsecase } from './user-edit.usecase';
 })
 export class UserEditComponent implements OnInit {
   constructor(private readonly _usecase: UserEditUsecase) {}
+  user$ = this._usecase.user$;
 
   ngOnInit(): void {
     this._usecase.fetchUser(1);

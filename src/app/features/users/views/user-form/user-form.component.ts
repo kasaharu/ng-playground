@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@ngneat/reactive-forms';
 import { Address, Company, User } from '../../../../domain/user';
 
@@ -8,6 +8,9 @@ import { Address, Company, User } from '../../../../domain/user';
   styleUrls: ['./user-form.component.scss'],
 })
 export class UserFormComponent {
+  // TODO: user が渡されなかった場合エラー
+  @Input() user!: User;
+
   addressForm = new FormGroup<Address>({
     street: new FormControl(''),
     suite: new FormControl(''),
