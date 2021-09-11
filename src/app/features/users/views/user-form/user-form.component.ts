@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@ngneat/reactive-forms';
 import { Address, Company, User } from '../../../../domain/user';
 
@@ -7,7 +7,7 @@ import { Address, Company, User } from '../../../../domain/user';
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.scss'],
 })
-export class UserFormComponent {
+export class UserFormComponent implements OnInit {
   // TODO: user が渡されなかった場合エラー
   @Input() user!: User;
 
@@ -33,4 +33,18 @@ export class UserFormComponent {
     }),
     address: this.addressForm,
   });
+
+  ngOnInit(): void {
+    this.userForm.patchValue({
+      name: this.user.name,
+      username: this.user.username,
+      email: this.user.email,
+      phone: this.user.phone,
+      company: {
+        name: this.user.company.name,
+        catchPhrase: this.user.company.catchPhrase,
+        bs: this.user.company.bs,
+      },
+    });
+  }
 }
