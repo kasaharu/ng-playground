@@ -1,4 +1,4 @@
-<form [formGroup]="userForm">
+<form [formGroup]="userForm" (ngSubmit)="submit()">
   <div>基本情報</div>
   <div class="tw-rounded tw-px-8 tw-mb-4 tw-flex tw-flex-col tw-my-2">
     <div class="md:tw-flex">
@@ -38,5 +38,18 @@
         <input class="tw-block tw-w-full tw-border tw-rounded tw-py-1 tw-px-4 tw-mb-3" type="text" formControlName="bs" />
       </div>
     </div>
+  </div>
+
+  <div class="tw-flex tw-justify-end">
+    <button
+      type="button"
+      (click)="cancel()"
+      class="tw-mt-4 tw-border tw-bg-white hover:tw-bg-gray-100 tw-text-gray-500 tw-py-2 tw-px-4 tw-rounded tw-cursor-pointer"
+    >
+      キャンセル
+    </button>
+    <button class="tw-ml-6 tw-mt-4 tw-bg-blue-500 hover:tw-bg-blue-700 tw-text-white tw-py-2 tw-px-4 tw-rounded tw-cursor-pointer">
+      更新する
+    </button>
   </div>
 </form>

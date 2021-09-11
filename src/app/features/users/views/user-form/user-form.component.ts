@@ -47,4 +47,12 @@ export class UserFormComponent implements OnInit {
       },
     });
   }
+
+  submit(): void {
+    console.log(this.userForm.value);
+  }
+
+  cancel(): void {
+    console.log('click cancel button');
+  }
 }
