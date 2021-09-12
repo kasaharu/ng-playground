@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@ngneat/reactive-forms';
 import { Address, Company, User } from '../../../../domain/user';
 
@@ -10,6 +10,8 @@ import { Address, Company, User } from '../../../../domain/user';
 export class UserFormComponent implements OnInit {
   // TODO: user が渡されなかった場合エラー
   @Input() user!: User;
+  @Output() submitted = new EventEmitter<User>();
+  @Output() canceled = new EventEmitter<void>();
 
   addressForm = new FormGroup<Address>({
     street: new FormControl(''),
@@ -58,10 +60,10 @@ export class UserFormComponent implements OnInit {
   }
 
   submit(): void {
-    console.log(this.userForm.value);
+    this.submitted.emit(this.userForm.value);
   }
 
   cancel(): void {
-    console.log('click cancel button');
+    this.canceled.emit();
   }
 }

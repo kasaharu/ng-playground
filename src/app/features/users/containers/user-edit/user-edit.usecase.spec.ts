@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { UserApi } from '../../../../infrastructures/api/user.api';
 import { UserEditUsecase } from './user-edit.usecase';
 
@@ -11,6 +12,7 @@ describe('UserEditUsecase', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
       providers: [UserEditUsecase, { provide: UserApi, useClass: MockUserApi }],
     });
     usecase = TestBed.inject(UserEditUsecase);

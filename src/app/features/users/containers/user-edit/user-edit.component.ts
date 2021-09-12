@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../../../domain/user';
 import { UserEditUsecase } from './user-edit.usecase';
 
 @Component({
@@ -13,5 +14,13 @@ export class UserEditComponent implements OnInit {
 
   ngOnInit(): void {
     this._usecase.fetchUser(1);
+  }
+
+  updateUser(user: User): void {
+    this._usecase.updateUser(user);
+  }
+
+  cancel(): void {
+    this._usecase.cancelEdit();
   }
 }
