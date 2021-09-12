@@ -35,15 +35,24 @@ export class UserFormComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.userForm.patchValue({
+    this.userForm.setValue({
+      id: this.user.id,
       name: this.user.name,
       username: this.user.username,
       email: this.user.email,
       phone: this.user.phone,
+      website: this.user.website,
       company: {
         name: this.user.company.name,
         catchPhrase: this.user.company.catchPhrase,
         bs: this.user.company.bs,
+      },
+      address: {
+        street: this.user.address.street,
+        suite: this.user.address.suite,
+        city: this.user.address.city,
+        zipcode: this.user.address.zipcode,
+        geo: { lat: this.user.address.geo.lat, lng: this.user.address.geo.lng },
       },
     });
   }
