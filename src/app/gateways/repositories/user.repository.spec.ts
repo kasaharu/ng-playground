@@ -1,11 +1,17 @@
 import { TestBed } from '@angular/core/testing';
+import { UserApi } from '../../infrastructures/api/user.api';
 import { UserRepository } from './user.repository';
+class MockUserApi {
+  getUsers(): void {}
+}
 
 describe('UserRepository', () => {
   let repository: UserRepository;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [{ provide: UserApi, useClass: MockUserApi }],
+    });
     repository = TestBed.inject(UserRepository);
   });
 
