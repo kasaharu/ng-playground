@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from '../../domain/user';
 import { UserApi } from '../../infrastructures/api/user.api';
 
@@ -14,13 +14,12 @@ export class UserRepository {
     return this._users$.asObservable();
   }
 
-  fetchUsers(): void {
+  async fetchUsers(): Promise<void> {
     if (this._users$.getValue() !== null) {
       return;
     }
 
-    this._api.getUsers().subscribe((val) => {
-      this._users$.next(val);
-    });
+    const users = await this._api.getUsers().toPromise();
+    this._users$.next(users);
   }
 }
