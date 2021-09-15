@@ -22,4 +22,17 @@ export class UserRepository {
     const users = await this._api.getUsers().toPromise();
     this._users$.next(users);
   }
+
+  async updateUser(user: User): Promise<void> {
+    const result = await this._api.patchUser(user).toPromise();
+    const storedValue = this._users$.getValue();
+    if (storedValue === null) {
+      this._users$.next([result]);
+      return;
+    }
+
+    const users = storedValue.map((u) => (u.id === result.id ? result : u));
+    this._users$.next(users);
+    return;
+  }
 }
