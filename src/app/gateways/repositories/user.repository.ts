@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { User } from '../../domain/user';
 import { UserApi } from '../../infrastructures/api/user.api';
 
@@ -12,6 +12,17 @@ export class UserRepository {
   private _users$ = new BehaviorSubject<User[] | null>(null);
   get users$(): Observable<User[] | null> {
     return this._users$.asObservable();
+  }
+
+  fetchUser(id: number): Observable<User> {
+    const storedValue = this._users$.getValue();
+    if (storedValue !== null) {
+      const user = storedValue.find((u) => u.id === id);
+      if (user !== undefined) {
+        return of(user);
+      }
+    }
+    return this._api.getUser(id);
   }
 
   async fetchUsers(): Promise<void> {
