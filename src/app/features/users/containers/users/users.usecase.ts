@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ComponentStore } from '@ngrx/component-store';
 import { Observable } from 'rxjs';
+import { take } from 'rxjs/operators';
 import { User } from '../../../../domain/user';
-import { UserApi } from '../../../../infrastructures/api/user.api';
+import { UserRepository } from '../../../../gateways/repositories/user.repository';
 
 export interface UserStore {
   users: User[] | null;
@@ -10,12 +11,12 @@ export interface UserStore {
 
 @Injectable()
 export class UsersUsecase extends ComponentStore<UserStore> {
-  constructor(private readonly _userApi: UserApi) {
+  constructor(private readonly _repo: UserRepository) {
     super({ users: null });
   }
 
   readonly users$: Observable<User[] | null> = this.select((state) => state.users);
-  readonly saveUsers = this.updater((_, users: User[]) => ({ users }));
+  readonly saveUsers = this.updater((_, users: User[] | null) => ({ users }));
   readonly saveUser = this.updater((state, user: User) => {
     if (state.users === null) {
       return { users: [user] };
@@ -25,12 +26,14 @@ export class UsersUsecase extends ComponentStore<UserStore> {
   });
 
   async fetchUsers(): Promise<void> {
-    const users = await this._userApi.getUsers().toPromise();
+    await this._repo.fetchUsers();
+
+    const users = await this._repo.users$.pipe(take(1)).toPromise();
     this.saveUsers(users);
   }
 
   async updateUser(user: User): Promise<void> {
-    const result = await this._userApi.patchUser(user).toPromise();
-    this.saveUser(result);
+    this.saveUser(user);
+    await this._repo.updateUser(user);
   }
 }
