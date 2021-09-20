@@ -30,7 +30,7 @@ describe('UserApi', () => {
       expect(resp).toEqual(expected);
     });
 
-    const req = httpTestingController.expectOne('https://jsonplaceholder.typicode.com/users');
+    const req = httpTestingController.expectOne('/users');
     expect(req.request.method).toEqual('GET');
     req.flush(expected);
   });
@@ -43,7 +43,7 @@ describe('UserApi', () => {
       expect(resp).toEqual(expected);
     });
 
-    const req = httpTestingController.expectOne(`https://jsonplaceholder.typicode.com/users/${userId}`);
+    const req = httpTestingController.expectOne(`/users/${userId}`);
     expect(req.request.method).toEqual('GET');
     req.flush(expected);
   });
@@ -56,7 +56,7 @@ describe('UserApi', () => {
       expect(resp).toEqual(expected);
     });
 
-    const req = httpTestingController.expectOne(`https://jsonplaceholder.typicode.com/users/${user.id}`);
+    const req = httpTestingController.expectOne(`/users/${user.id}`);
     expect(req.request.method).toEqual('PATCH');
     req.flush(expected);
   });

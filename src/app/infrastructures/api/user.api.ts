@@ -10,14 +10,14 @@ export class UserApi {
   constructor(private readonly _http: HttpClient) {}
 
   getUsers(): Observable<User[]> {
-    return this._http.get<User[]>('https://jsonplaceholder.typicode.com/users');
+    return this._http.get<User[]>('/users');
   }
 
   getUser(userId: number): Observable<User> {
-    return this._http.get<User>(`https://jsonplaceholder.typicode.com/users/${userId}`);
+    return this._http.get<User>(`/users/${userId}`);
   }
 
   patchUser(user: User): Observable<User> {
-    return this._http.patch<User>(`https://jsonplaceholder.typicode.com/users/${user.id}`, user);
+    return this._http.patch<User>(`/users/${user.id}`, user);
   }
 }
