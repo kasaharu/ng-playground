@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ComponentStore } from '@ngrx/component-store';
 import { Observable } from 'rxjs';
-import { take } from 'rxjs/operators';
 import { User } from '../../../../domain/user';
-import { UserRepository } from '../../../../gateways/repositories/user.repository';
+import { UserApi } from '../../../../infrastructures/api/user.api';
 
 export interface UserStore {
   users: User[] | null;
@@ -11,7 +10,7 @@ export interface UserStore {
 
 @Injectable()
 export class UsersUsecase extends ComponentStore<UserStore> {
-  constructor(private readonly _repo: UserRepository) {
+  constructor(private readonly _api: UserApi) {
     super({ users: null });
   }
 
@@ -26,14 +25,12 @@ export class UsersUsecase extends ComponentStore<UserStore> {
   });
 
   async fetchUsers(): Promise<void> {
-    await this._repo.fetchUsers();
-
-    const users = await this._repo.users$.pipe(take(1)).toPromise();
+    const users = await this._api.getUsers().toPromise();
     this.saveUsers(users);
   }
 
   async updateUser(user: User): Promise<void> {
+    await this._api.patchUser(user).toPromise();
     this.saveUser(user);
-    await this._repo.updateUser(user);
   }
 }
