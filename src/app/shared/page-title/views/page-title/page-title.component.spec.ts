@@ -1,24 +1,11 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { render, screen } from '@testing-library/angular';
 import { PageTitleComponent } from './page-title.component';
 
 describe('PageTitleComponent', () => {
-  let component: PageTitleComponent;
-  let fixture: ComponentFixture<PageTitleComponent>;
+  it('should render', async () => {
+    const expected = 'title';
+    await render(PageTitleComponent, { componentProperties: { title: expected } });
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [PageTitleComponent],
-    }).compileComponents();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(PageTitleComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(screen.getByText(expected));
   });
 });
