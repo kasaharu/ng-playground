@@ -1,36 +1,49 @@
-import { Component } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
-import { By } from '@angular/platform-browser';
+import { render, screen } from '@testing-library/angular';
 import { User } from '../../../../domain/user';
 import { createMockUser } from '../../../../testing/factories';
 import { UserEditorFormComponent } from './user-editor-form.component';
 
-@Component({
-  template: '<app-user-editor-form [user]="user"></app-user-editor-form>',
-})
-class TestHostComponent {
-  user: User = createMockUser({});
-}
-
 describe('UserEditorFormComponent', () => {
-  let component: UserEditorFormComponent;
-  let fixture: ComponentFixture<TestHostComponent>;
+  describe('should render', () => {
+    it('name が表示されていること', async () => {
+      const name = 'taro';
+      const user: User = createMockUser({ name });
+      const expected = name;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [UserEditorFormComponent, TestHostComponent],
-      imports: [ReactiveFormsModule],
-    }).compileComponents();
-  });
+      await render(UserEditorFormComponent, { imports: [ReactiveFormsModule], componentProperties: { user } });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(TestHostComponent);
-    component = fixture.debugElement.query(By.directive(UserEditorFormComponent)).componentInstance;
-    fixture.detectChanges();
-  });
+      expect(screen.getByDisplayValue(expected));
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    it('username が表示されていること', async () => {
+      const username = 'taro123';
+      const user: User = createMockUser({ username });
+      const expected = username;
+
+      await render(UserEditorFormComponent, { imports: [ReactiveFormsModule], componentProperties: { user } });
+
+      expect(screen.getByDisplayValue(expected));
+    });
+
+    it('email が表示されていること', async () => {
+      const email = 'taro@email.com';
+      const user: User = createMockUser({ email });
+      const expected = email;
+
+      await render(UserEditorFormComponent, { imports: [ReactiveFormsModule], componentProperties: { user } });
+
+      expect(screen.getByDisplayValue(expected));
+    });
+
+    it('website が表示されていること', async () => {
+      const website = 'taro.co.jp';
+      const user: User = createMockUser({ website });
+      const expected = website;
+
+      await render(UserEditorFormComponent, { imports: [ReactiveFormsModule], componentProperties: { user } });
+
+      expect(screen.getByDisplayValue(expected));
+    });
   });
 });
