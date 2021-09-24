@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Validators } from '@angular/forms';
 import { FormControl, FormGroup } from '@ngneat/reactive-forms';
 import { Address, Company, User } from '../../../../domain/user';
 
@@ -23,7 +24,7 @@ export class UserFormComponent implements OnInit {
 
   userForm = new FormGroup<User>({
     id: new FormControl(0),
-    name: new FormControl(''),
+    name: new FormControl('', Validators.required),
     username: new FormControl(''),
     email: new FormControl(''),
     phone: new FormControl(''),
