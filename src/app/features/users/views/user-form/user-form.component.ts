@@ -65,6 +65,11 @@ export class UserFormComponent implements OnInit {
   }
 
   submit(): void {
+    this.userForm.markAllAsTouched();
+    if (this.userForm.invalid) {
+      return;
+    }
+
     this.submitted.emit(this.userForm.value);
   }
 
