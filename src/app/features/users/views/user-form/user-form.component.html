@@ -2,8 +2,13 @@
   <div>基本情報</div>
   <div class="tw-rounded tw-px-8 tw-mb-4 tw-flex tw-flex-col tw-my-2">
     <div class="md:tw-flex">
-      <div class="md:tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0">
-        <label class="tw-block tw-uppercase tw-text-grey-darker tw-text-xs tw-font-bold tw-mb-2">Name</label>
+      <div class="md:tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0 tw-relative">
+        <div class="tw-flex">
+          <label class="tw-block tw-uppercase tw-text-grey-darker tw-text-xs tw-font-bold tw-mb-2">Name</label>
+          <p class="tw-ml-6 tw-text-red-500 tw-font-bolod tw-text-xs" *ngIf="nameControl.errors?.required && nameControl.touched">
+            * name は必須です
+          </p>
+        </div>
         <input class="tw-block tw-w-full tw-border tw-rounded tw-py-1 tw-px-4 tw-mb-3" type="text" formControlName="name" />
       </div>
       <div class="md:tw-w-1/2 tw-px-3 tw-mb-6 md:tw-mb-0">

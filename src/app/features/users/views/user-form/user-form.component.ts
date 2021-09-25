@@ -60,6 +60,10 @@ export class UserFormComponent implements OnInit {
     });
   }
 
+  get nameControl(): FormControl<string> {
+    return this.userForm.getControl('name');
+  }
+
   submit(): void {
     this.submitted.emit(this.userForm.value);
   }
