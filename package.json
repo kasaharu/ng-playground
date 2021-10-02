@@ -48,7 +48,7 @@
     "autoprefixer": "10.3.4",
     "eslint": "7.32.0",
     "jest": "27.2.4",
-    "jest-preset-angular": "9.0.7",
+    "jest-preset-angular": "10.0.1",
     "msw": "^0.35.0",
     "postcss": "8.3.6",
     "prettier": "2.4.1",
