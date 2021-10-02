@@ -11,6 +11,7 @@ import { UserListComponent } from './views/user-list/user-list.component';
 import { UserEditPageComponent } from './pages/user-edit/user-edit.component';
 import { UserEditComponent } from './containers/user-edit/user-edit.component';
 import { UserFormComponent } from './views/user-form/user-form.component';
+import { LyUsersComponent } from './views/ly-users/ly-users.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { UserFormComponent } from './views/user-form/user-form.component';
     UserEditPageComponent,
     UserEditComponent,
     UserFormComponent,
+    LyUsersComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, UsersRoutingModule, PageTitleModule],
 })
