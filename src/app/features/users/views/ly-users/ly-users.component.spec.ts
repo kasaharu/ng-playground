@@ -8,9 +8,8 @@ describe('LyUsersComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LyUsersComponent ]
-    })
-    .compileComponents();
+      declarations: [LyUsersComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
