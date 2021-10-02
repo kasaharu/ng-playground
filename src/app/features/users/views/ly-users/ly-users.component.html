@@ -1,1 +1,17 @@
-<p>ly-users works!</p>
+<app-page-title [title]="'ユーザー一覧'"></app-page-title>
+<p class="tw-mb-4">ユーザーの一覧です</p>
+
+<button
+  class="tw-mt-4 tw-bg-blue-500 hover:tw-bg-blue-700 tw-text-white tw-py-2 tw-px-4 tw-rounded tw-cursor-pointer"
+  (click)="toggleMode()"
+>
+  {{ toggleButtonText }}
+</button>
+
+<ng-container *ngIf="!editable; else editorBlock">
+  <app-user-list [users]="users"></app-user-list>
+</ng-container>
+
+<ng-template #editorBlock>
+  <app-user-list-editor [users]="users" (userUpdated)="updateUser($event)"></app-user-list-editor>
+</ng-template>
