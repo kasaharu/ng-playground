@@ -1582,12 +1582,12 @@
     outvariant "^1.2.0"
     strict-event-emitter "^0.2.0"
 
-"@ngneat/reactive-forms@1.7.5":
-  version "1.7.5"
-  resolved "https://registry.yarnpkg.com/@ngneat/reactive-forms/-/reactive-forms-1.7.5.tgz#df30ac7f7fe5ef8a7d0a2beac36aa009c1c26336"
-  integrity sha512-7hTWW7SDopCZW+sWDf7UK5lsLzeKK66iuAzxx+LntqVoU5d3lGCeR503sXCbo8TDKApSH1za9f/KKLFqUYGV/w==
+"@ngneat/reactive-forms@3.1.4":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@ngneat/reactive-forms/-/reactive-forms-3.1.4.tgz#54e235d333eddc9c0e8d32629f47b22d7e8e1026"
+  integrity sha512-CqGyiekcXpEK7pgSVypmozuOJf9Khh+EnTM+THs8/OZ9er2IWc1K8SZMD6Quvi138FZIYlOI4SUsh5R8TtZiQA==
   dependencies:
-    tslib "^2.0.0"
+    tslib "^2.3.0"
 
 "@ngneat/tailwind@7.0.3":
   version "7.0.3"
@@ -9760,7 +9760,7 @@ tslib@2.3.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.0.tgz#803b8cdab3e12ba581a4ca41c8839bbb0dacb09e"
   integrity sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==
 
-tslib@2.3.1, tslib@^2.0.0, tslib@^2.2.0:
+tslib@2.3.1, tslib@^2.0.0, tslib@^2.2.0, tslib@^2.3.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
