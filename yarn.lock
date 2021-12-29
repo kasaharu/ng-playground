@@ -1795,10 +1795,10 @@
   resolved "https://registry.yarnpkg.com/@ngneat/tailwind/-/tailwind-7.0.3.tgz#fff7edff35642b249d8711a9b10d5753216dd4a9"
   integrity sha512-o9quceIAomYD+P/40tJ1n1G/CkWcAa1dWW5/acCz4qnS7ajhGsBoSD4N+usi+vqdoEJnunCsoEBWL9OMsSwcFA==
 
-"@ngrx/component-store@12.4.0":
-  version "12.4.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/component-store/-/component-store-12.4.0.tgz#92da69cb8198c0a63ab5f25eb05551c729876f1b"
-  integrity sha512-qB4qcrAeHgNdQC1x0Q1rAcuD0KPMZ0PSQzGlZCv+BYXJAj08XIGcnN34ATALUlvxgKLroLd3lhXWeMZc8PLSNA==
+"@ngrx/component-store@13.0.2":
+  version "13.0.2"
+  resolved "https://registry.yarnpkg.com/@ngrx/component-store/-/component-store-13.0.2.tgz#fd254a2000851a213ee3c0ba76164055c370939e"
+  integrity sha512-zAqXuO2FT3gBJp9TWc0O8Lo4h62xbXmUxBYYTT2/BNczK+XNf/pzDWrYEtsgwP4Php0AgoY38Ht0ZS6sJkgpMQ==
   dependencies:
     tslib "^2.0.0"
 
