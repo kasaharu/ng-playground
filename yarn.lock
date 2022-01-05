@@ -1784,12 +1784,12 @@
     outvariant "^1.2.0"
     strict-event-emitter "^0.2.0"
 
-"@ngneat/reactive-forms@1.7.5":
-  version "1.7.5"
-  resolved "https://registry.yarnpkg.com/@ngneat/reactive-forms/-/reactive-forms-1.7.5.tgz#df30ac7f7fe5ef8a7d0a2beac36aa009c1c26336"
-  integrity sha512-7hTWW7SDopCZW+sWDf7UK5lsLzeKK66iuAzxx+LntqVoU5d3lGCeR503sXCbo8TDKApSH1za9f/KKLFqUYGV/w==
+"@ngneat/reactive-forms@4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@ngneat/reactive-forms/-/reactive-forms-4.0.3.tgz#c2187cd189340f17950f1ef4b7201ce5c71fc0a7"
+  integrity sha512-1R8KVDU/l4k4P1hVEPpd75zJ3HHH+bL2kOoINnEh6TKNjxv5+FwlbGbH0Xm6GrYktq2IEEuVqdETf9n3Hu1/Ow==
   dependencies:
-    tslib "^2.0.0"
+    tslib "^2.3.0"
 
 "@ngneat/tailwind@7.0.3":
   version "7.0.3"
