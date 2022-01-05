@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Validators } from '@angular/forms';
-import { FormControl, FormGroup } from '@ngneat/reactive-forms';
+import { ControlsOf, FormControl, FormGroup } from '@ngneat/reactive-forms';
 import { Address, Company, User } from '../../../../domain/user';
 
 @Component({
@@ -14,7 +14,7 @@ export class UserFormComponent implements OnInit {
   @Output() submitted = new EventEmitter<User>();
   @Output() canceled = new EventEmitter<void>();
 
-  addressForm = new FormGroup<Address>({
+  addressForm = new FormGroup<ControlsOf<Address>>({
     street: new FormControl(''),
     suite: new FormControl(''),
     city: new FormControl(''),
@@ -22,14 +22,14 @@ export class UserFormComponent implements OnInit {
     geo: new FormGroup({ lat: new FormControl(''), lng: new FormControl('') }),
   });
 
-  userForm = new FormGroup<User>({
+  userForm = new FormGroup<ControlsOf<User>>({
     id: new FormControl(0),
     name: new FormControl('', Validators.required),
     username: new FormControl(''),
     email: new FormControl(''),
     phone: new FormControl(''),
     website: new FormControl(''),
-    company: new FormGroup<Company>({
+    company: new FormGroup<ControlsOf<Company>>({
       name: new FormControl(''),
       catchPhrase: new FormControl(''),
       bs: new FormControl(''),
@@ -61,7 +61,7 @@ export class UserFormComponent implements OnInit {
   }
 
   get nameControl(): FormControl<string> {
-    return this.userForm.getControl('name');
+    return this.userForm.get('name');
   }
 
   submit(): void {

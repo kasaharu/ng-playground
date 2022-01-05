@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@ngneat/reactive-forms';
-import { debounceTime, withLatestFrom } from 'rxjs/operators';
+import { ControlsOf, FormControl, FormGroup } from '@ngneat/reactive-forms';
 import { User } from '../../../../domain/user';
 
 @Component({
@@ -13,7 +12,7 @@ export class UserEditorFormComponent implements OnInit {
   @Input() user!: User;
   @Output() submitted = new EventEmitter<User>();
 
-  form = new FormGroup<User>(
+  form = new FormGroup<ControlsOf<User>>(
     {
       id: new FormControl(),
       name: new FormControl(''),
