@@ -1,0 +1,17 @@
+.lock-on {
+  &:hover {
+    animation: swing 1s ease 0s infinite normal forwards;
+  }
+}
+
+@keyframes swing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    transform: scale(1);
+  }
+
+  100% {
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    transform: scale(1.1);
+  }
+}

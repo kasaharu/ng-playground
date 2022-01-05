@@ -1,1 +1,15 @@
 <p>stamp works!</p>
+
+<button class="tw-ml-6 tw-mt-4 tw-bg-blue-500 hover:tw-bg-blue-700 tw-text-white tw-py-2 tw-px-4 tw-rounded tw-cursor-pointer">
+  スタンプ
+</button>
+
+<ng-container *ngIf="showStampField">
+  <div class="tw-flex tw-w-48 tw-border">
+    <ng-container *ngFor="let image of images">
+      <button type="button" (click)="clickedImage(image.id)" class="lock-on" [class.tw-bg-blue-500]="image.id === selectedImageId">
+        <img src="{{ image.url }}" width="48" />
+      </button>
+    </ng-container>
+  </div>
+</ng-container>
