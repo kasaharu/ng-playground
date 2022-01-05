@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StampComponent } from './stamp.component';
+import { StampPageComponent } from './stamp.component';
 
 describe('StampComponent', () => {
-  let component: StampComponent;
-  let fixture: ComponentFixture<StampComponent>;
+  let component: StampPageComponent;
+  let fixture: ComponentFixture<StampPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StampComponent ]
-    })
-    .compileComponents();
+      declarations: [StampPageComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StampComponent);
+    fixture = TestBed.createComponent(StampPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

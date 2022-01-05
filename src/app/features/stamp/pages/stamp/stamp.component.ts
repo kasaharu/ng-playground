@@ -5,4 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './stamp.component.html',
   styleUrls: ['./stamp.component.scss'],
 })
-export class StampComponent {}
+export class StampPageComponent {}
