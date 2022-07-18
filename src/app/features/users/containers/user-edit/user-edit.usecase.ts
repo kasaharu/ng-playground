@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ComponentStore } from '@ngrx/component-store';
-import { Observable } from 'rxjs';
+import { firstValueFrom, Observable } from 'rxjs';
 import { User } from '../../../../domain/user';
 import { UserApi } from '../../../../infrastructures/api/user.api';
 
@@ -19,12 +19,12 @@ export class UserEditUsecase extends ComponentStore<UserEditState> {
   readonly saveUser = this.updater((state, user: User) => ({ ...state, user }));
 
   async fetchUser(userId: number): Promise<void> {
-    const user = await this._api.getUser(userId).toPromise();
+    const user = await firstValueFrom(this._api.getUser(userId));
     this.saveUser(user);
   }
 
   async updateUser(user: User): Promise<void> {
-    await this._api.patchUser(user).toPromise();
+    await firstValueFrom(this._api.patchUser(user));
     this._router.navigateByUrl('/users');
     return;
   }

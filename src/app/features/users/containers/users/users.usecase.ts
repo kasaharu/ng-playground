@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ComponentStore } from '@ngrx/component-store';
-import { Observable } from 'rxjs';
+import { firstValueFrom, Observable } from 'rxjs';
 import { User } from '../../../../domain/user';
 import { UserApi } from '../../../../infrastructures/api/user.api';
 
@@ -25,12 +25,12 @@ export class UsersUsecase extends ComponentStore<UserStore> {
   });
 
   async fetchUsers(): Promise<void> {
-    const users = await this._api.getUsers().toPromise();
+    const users = await firstValueFrom(this._api.getUsers());
     this.saveUsers(users);
   }
 
   async updateUser(user: User): Promise<void> {
-    await this._api.patchUser(user).toPromise();
+    await firstValueFrom(this._api.patchUser(user));
     this.saveUser(user);
   }
 }
