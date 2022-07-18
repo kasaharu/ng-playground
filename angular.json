@@ -4,7 +4,9 @@
   "cli": {
     "analytics": "00710377-8dc1-48d7-ae3a-b816a9f0eaa5",
     "packageManager": "yarn",
-    "defaultCollection": "@angular-eslint/schematics"
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -107,6 +109,5 @@
         }
       }
     }
-  },
-  "defaultProject": "ng-playground"
+  }
 }
