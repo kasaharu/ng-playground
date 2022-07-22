@@ -40,7 +40,7 @@
     "@angular/compiler-cli": "14.1.0",
     "@testing-library/angular": "12.1.0",
     "@types/jest": "28.1.6",
-    "@types/node": "14.17.34",
+    "@types/node": "14.18.22",
     "@typescript-eslint/eslint-plugin": "5.30.6",
     "@typescript-eslint/parser": "5.30.6",
     "angular-cli-ghpages": "1.0.0-rc.2",
