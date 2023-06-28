@@ -2126,10 +2126,10 @@
     outvariant "^1.2.0"
     strict-event-emitter "^0.2.0"
 
-"@ngneat/reactive-forms@5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@ngneat/reactive-forms/-/reactive-forms-5.0.0.tgz#2339a810a375d18087d946640363c9756ac14e24"
-  integrity sha512-1duAEvwC0gS8NVICuDOpGjyahAWoMgD084b5OfmJT7pRqlgD2EhkeloFmGAUjR+wNbtXK32t52bUjK6oE3HMbg==
+"@ngneat/reactive-forms@5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@ngneat/reactive-forms/-/reactive-forms-5.0.2.tgz#d362983b2064ee00ae8d5765bcf1faaee2a386a8"
+  integrity sha512-9y9N55bUS9IWi0i5KnhFl0ZBStAi0qahv22LKK1QQYYldfEVvHh8keryxuGTUTnCIDfzIiZbbbmtRpTucdN1yQ==
   dependencies:
     tslib "^2.3.0"
 
