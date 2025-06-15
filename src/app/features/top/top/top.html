@@ -1,1 +1,7 @@
-<p>top works!</p>
+@if (state().isLoading()) {
+<p>Loading...</p>
+} @else if (state().error()) {
+<div>エラーが発生</div>
+} @else { @for (item of state().value(); track item.id) {
+<p>{{item.title}}</p>
+} }
