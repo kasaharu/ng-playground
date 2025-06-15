@@ -1,6 +1,0 @@
-<app-page-title [title]="'ユーザー編集'"></app-page-title>
-<p class="tw-mb-4">ユーザーの編集画面です</p>
-
-<ng-container *ngIf="user$ | async as user">
-  <app-user-form [user]="user" (submitted)="updateUser($event)" (canceled)="cancel()"></app-user-form>
-</ng-container>
