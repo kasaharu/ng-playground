@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { TopPage } from './top-page';
+import TopPage from './top-page';
 
 describe('TopPage', () => {
   let component: TopPage;
